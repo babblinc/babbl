@@ -2,35 +2,219 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Babbl Inc.</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Babbl Inc. | Innovating Tomorrow Today</title>
+  <style>
+    :root {
+      --red: #0078D4;
+      --green: #78C800;
+      --blue: #E81123;
+      --yellow: #FFB900;
+      --dark: #1b1b1b;
+      --light: #f9f9f9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--red);
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--red);
+    }
+
+    .hero {
+      background-color: var(--yellow);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: var(--dark);
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background-color: var(--green);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 30px;
+      width: 300px;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      background-color: var(--blue);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+    }
+
+    .cta button {
+      background-color: var(--yellow);
+      color: black;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>Babbl Inc.</h1>
-    <p>Innovating Tomorrow, Today</p>
+    <p>Innovating Tomorrow Today</p>
   </header>
 
-  <main>
-    <section>
-      <h2>About Us</h2>
-      <p>Babbl is reimagining communication and collaboration with next-gen digital tools.</p>
-    </section>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Products</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
 
-    <section>
-      <h2>Mission</h2>
-      <p>To empower global communication with accessible, intelligent technology.</p>
-    </section>
+  <section class="hero">
+    <h1>Empowering Your Digital Journey</h1>
+    <p>Where technology meets creativity – communication and collaboration reimagined.</p>
+    <button>Get Started</button>
+  </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: babbl@babbl.com<br/>Phone: +1 (123) 456-7890</p>
-    </section>
-  </main>
+  <section class="section">
+    <h2>What We Offer</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Real-Time Messaging</h3>
+        <p>Secure and fast messaging across teams, platforms, and time zones.</p>
+      </div>
+      <div class="card">
+        <h3>Video Collaboration</h3>
+        <p>HD meetings, screen sharing, and integrated productivity tools.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud Sync & Storage</h3>
+        <p>Access and share your work instantly from anywhere in the world.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Our Products</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>BabblTalk</h3>
+        <p>A modern team chat tool with AI-powered responses and file sharing.</p>
+      </div>
+      <div class="card">
+        <h3>BabblMeet</h3>
+        <p>Seamless video conferencing with real-time collaboration features.</p>
+      </div>
+      <div class="card">
+        <h3>BabblCloud</h3>
+        <p>Your team's central place for files, projects, and collaboration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Transform Your Team?</h2>
+    <p>Try Babbl Inc. for free. No credit card required.</p>
+    <button>Sign Up Now</button>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Babbl Inc. All rights reserved.</p>
+    &copy; 2025 Babbl Inc. All rights reserved. | <a href="#" style="color:#FFB900;">Privacy Policy</a>
   </footer>
+
 </body>
 </html>
+
+
