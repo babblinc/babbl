@@ -1,220 +1,1235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Babbl Inc. | Innovating Tomorrow Today</title>
-  <style>
-    :root {
-      --red: #0078D4;
-      --green: #78C800;
-      --blue: #E81123;
-      --yellow: #FFB900;
-      --dark: #1b1b1b;
-      --light: #f9f9f9;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: var(--red);
-      padding: 20px;
-      color: white;
-      text-align: center;
-    }
-
-    nav {
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #ccc;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: var(--red);
-    }
-
-    .hero {
-      background-color: var(--yellow);
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      color: var(--dark);
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      color: var(--dark);
-      margin-bottom: 30px;
-    }
-
-    .hero button {
-      background-color: var(--green);
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 30px;
-      width: 300px;
-      text-align: left;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .card h3 {
-      color: var(--red);
-      margin-bottom: 10px;
-    }
-
-    .cta {
-      background-color: var(--blue);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 2.2em;
-      margin-bottom: 15px;
-    }
-
-    .cta button {
-      background-color: var(--yellow);
-      color: black;
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bazillu - AI-Powered Productivity Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(120deg, #4f46e5, #7c3aed);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .chatbot-message {
+            animation: slideIn 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+        }
+        
+        .logo {
+            font-weight: 700;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .featured-product {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+        }
+        
+        .featured-product.active {
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .footer-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+        
+        .footer-link::before {
+            content: '→';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-link:hover::before {
+            opacity: 1;
+            left: -20px;
+        }
+        
+        .product-info-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            max-width: 90%;
+            width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+        
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            margin: 0 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.4;
+        }
+        
+        .typing-indicator span:nth-child(1) {
+            animation: typing 1s infinite 0s;
+        }
+        
+        .typing-indicator span:nth-child(2) {
+            animation: typing 1s infinite 0.2s;
+        }
+        
+        .typing-indicator span:nth-child(3) {
+            animation: typing 1s infinite 0.4s;
+        }
+        
+        @keyframes typing {
+            0% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.4; transform: scale(1); }
+        }
+        
+        .currency-symbol {
+            font-size: 0.7em;
+            vertical-align: super;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#home" class="logo text-2xl">bazillu</a>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#products" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Products</a>
+                        <a href="#chatbot" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">AI Chatbot</a>
+                        <a href="#pricing" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Pricing</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="#request-demo" class="btn-primary inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Request Demo
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden ml-2 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu, show/hide based on menu state -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#home" class="text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#products" class="text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 text-base font-medium">Products</a>
+                <a href="#chatbot" class="text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 text-base font-medium">AI Chatbot</a>
+                <a href="#pricing" class="text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 text-base font-medium">Pricing</a>
+                <a href="#contact" class="text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <header>
-    <h1>Babbl Inc.</h1>
-    <p>Innovating Tomorrow Today</p>
-  </header>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left text-white">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+                        Revolutionize Your Workflow with <span class="text-yellow-300">bazillu</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 text-indigo-100">
+                        AI-powered productivity suite that transforms how you work, create, and collaborate.
+                    </p>
+                    <div class="mb-8">
+                        <div class="featured-product-container relative h-12">
+                            <div class="featured-product active" id="featured-product-1">
+                                <span class="text-yellow-300 font-bold">Featured Product:</span> bazillu Docs - Smart document creation
+                            </div>
+                            <div class="featured-product" id="featured-product-2">
+                                <span class="text-yellow-300 font-bold">Featured Product:</span> bazillu Sheet - Intelligent spreadsheets
+                            </div>
+                            <div class="featured-product" id="featured-product-3">
+                                <span class="text-yellow-300 font-bold">Featured Product:</span> bazillu Slides - AI presentation design
+                            </div>
+                            <div class="featured-product" id="featured-product-4">
+                                <span class="text-yellow-300 font-bold">Featured Product:</span> bazillu Studio - Creative design tools
+                            </div>
+                            <div class="featured-product" id="featured-product-5">
+                                <span class="text-yellow-300 font-bold">Featured Product:</span> bazillu Mail - Smart email management
+                            </div>
+                            <div class="featured-product" id="featured-product-6">
+                                <span class="text-yellow-300 font-bold">Featured Product:</span> bazillu Chat - Team collaboration
+                            </div>
+                            <div class="featured-product" id="featured-product-7">
+                                <span class="text-yellow-300 font-bold">Featured Product:</span> bazillu Calendar - AI scheduling
+                            </div>
+                            <div class="featured-product" id="featured-product-8">
+                                <span class="text-yellow-300 font-bold">Featured Product:</span> bazillu Forms - Smart data collection
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#products" class="btn-primary inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Explore Products
+                        </a>
+                        <a href="#request-demo" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-800 bg-opacity-60 hover:bg-opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Request Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <div class="relative animate-float">
+                        <svg class="w-full h-auto" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="50" y="50" width="400" height="300" rx="20" fill="#ffffff" />
+                            <rect x="70" y="80" width="360" height="240" rx="10" fill="#f3f4f6" />
+                            <rect x="90" y="100" width="150" height="20" rx="5" fill="#6366f1" />
+                            <rect x="90" y="130" width="320" height="10" rx="5" fill="#d1d5db" />
+                            <rect x="90" y="150" width="280" height="10" rx="5" fill="#d1d5db" />
+                            <rect x="90" y="170" width="320" height="10" rx="5" fill="#d1d5db" />
+                            <rect x="90" y="190" width="200" height="10" rx="5" fill="#d1d5db" />
+                            <rect x="90" y="220" width="100" height="30" rx="5" fill="#4f46e5" />
+                            <circle cx="380" cy="120" r="30" fill="#7c3aed" class="animate-pulse-slow" />
+                            <path d="M370 120 L380 130 L390 110" stroke="white" stroke-width="3" fill="none" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+                <path fill="#ffffff" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Products</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Our Powerful Suite of Products
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Everything you need to boost productivity and creativity in one place.
+                </p>
+            </div>
 
-  <section class="hero">
-    <h1>Empowering Your Digital Journey</h1>
-    <p>Where technology meets creativity – communication and collaboration reimagined.</p>
-    <button>Get Started</button>
-  </section>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- bazillu Docs -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 bg-indigo-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <h3 class="text-xl font-bold">bazillu Docs</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            AI-powered word processing that helps you write better, faster, and smarter.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Smart writing suggestions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Real-time collaboration</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Advanced formatting</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="product-info-btn inline-flex items-center text-indigo-600 font-medium hover:text-indigo-500" data-product="docs">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-  <section class="section">
-    <h2>What We Offer</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Real-Time Messaging</h3>
-        <p>Secure and fast messaging across teams, platforms, and time zones.</p>
-      </div>
-      <div class="card">
-        <h3>Video Collaboration</h3>
-        <p>HD meetings, screen sharing, and integrated productivity tools.</p>
-      </div>
-      <div class="card">
-        <h3>Cloud Sync & Storage</h3>
-        <p>Access and share your work instantly from anywhere in the world.</p>
-      </div>
-    </div>
-  </section>
+                <!-- bazillu Sheet -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 bg-green-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <h3 class="text-xl font-bold">bazillu Sheet</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Intelligent spreadsheets with data analysis and visualization capabilities.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">AI-powered formulas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Smart data insights</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Interactive charts</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="product-info-btn inline-flex items-center text-green-600 font-medium hover:text-green-500" data-product="sheet">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-  <section class="section">
-    <h2>Our Products</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>BabblTalk</h3>
-        <p>A modern team chat tool with AI-powered responses and file sharing.</p>
-      </div>
-      <div class="card">
-        <h3>BabblMeet</h3>
-        <p>Seamless video conferencing with real-time collaboration features.</p>
-      </div>
-      <div class="card">
-        <h3>BabblCloud</h3>
-        <p>Your team's central place for files, projects, and collaboration.</p>
-      </div>
-    </div>
-  </section>
+                <!-- bazillu Slides -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 bg-amber-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                        <h3 class="text-xl font-bold">bazillu Slides</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Create stunning presentations with AI-generated designs and content.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">AI design suggestions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Dynamic animations</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Content suggestions</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="product-info-btn inline-flex items-center text-amber-600 font-medium hover:text-amber-500" data-product="slides">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-  <section class="cta">
-    <h2>Ready to Transform Your Team?</h2>
-    <p>Try Babbl Inc. for free. No credit card required.</p>
-    <button>Sign Up Now</button>
-  </section>
+                <!-- bazillu Studio -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 bg-purple-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <h3 class="text-xl font-bold">bazillu Studio</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Design tool with AI capabilities for creating stunning visuals and graphics.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">AI image generation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Smart templates</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Brand kit integration</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="product-info-btn inline-flex items-center text-purple-600 font-medium hover:text-purple-500" data-product="studio">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-  <footer>
-    &copy; 2025 Babbl Inc. All rights reserved. | <a href="#" style="color:#FFB900;">Privacy Policy</a>
-  </footer>
+                <!-- bazillu Chat -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 bg-blue-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                        </svg>
+                        <h3 class="text-xl font-bold">bazillu Chat</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Team messaging platform with AI-powered communication tools.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Smart message suggestions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Automated translations</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">File sharing & search</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="product-info-btn inline-flex items-center text-blue-600 font-medium hover:text-blue-500" data-product="chat">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-</body>
-</html>
+                <!-- bazillu Mail -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 bg-red-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <h3 class="text-xl font-bold">bazillu Mail</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Smart email management with AI-powered organization and response suggestions.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Smart inbox categorization</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">AI reply suggestions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Scheduled sending</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="product-info-btn inline-flex items-center text-red-600 font-medium hover:text-red-500" data-product="mail">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
+                <!-- bazillu Calendar -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 bg-teal-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <h3 class="text-xl font-bold">bazillu Calendar</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            AI-powered scheduling and calendar management for optimal productivity.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Smart scheduling</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Meeting optimization</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Time zone management</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="product-info-btn inline-flex items-center text-teal-600 font-medium hover:text-teal-500" data-product="calendar">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
+                <!-- bazillu Forms -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 bg-pink-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
+                        <h3 class="text-xl font-bold">bazillu Forms</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Intelligent form creation and data collection with AI-powered analysis.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Smart form templates</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Data visualization</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Response analytics</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="product-info-btn inline-flex items-center text-pink-600 font-medium hover:text-pink-500" data-product="forms">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Choose the plan that's right for you and your team.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                    <div class="p-6 bg-gray-800 text-white text-center">
+                        <h3 class="text-2xl font-bold">Basic</h3>
+                        <div class="mt-4 flex justify-center">
+                            <span class="text-4xl font-extrabold">$9</span>
+                            <span class="currency-symbol">99</span>
+                            <span class="ml-2 text-xl font-medium self-end">/month</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Access to bazillu Docs</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Access to bazillu Sheet</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">5GB storage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Basic AI features</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Advanced collaboration</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-gray-800 text-white text-center py-3 px-4 rounded-md hover:bg-gray-700 transition duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 border-2 border-indigo-500">
+                    <div class="absolute top-0 right-0">
+                        <div class="bg-indigo-500 text-white px-3 py-1 transform rotate-45 translate-x-8 translate-y-3">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6 bg-indigo-600 text-white text-center">
+                        <h3 class="text-2xl font-bold">Pro</h3>
+                        <div class="mt-4 flex justify-center">
+                            <span class="text-4xl font-extrabold">$19</span>
+                            <span class="currency-symbol">99</span>
+                            <span class="ml-2 text-xl font-medium self-end">/month</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">All Basic features</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Access to all bazillu products</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">50GB storage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Advanced AI features</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Team collaboration</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-indigo-600 text-white text-center py-3 px-4 rounded-md hover:bg-indigo-700 transition duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                    <div class="p-6 bg-purple-700 text-white text-center">
+                        <h3 class="text-2xl font-bold">Enterprise</h3>
+                        <div class="mt-4 flex justify-center">
+                            <span class="text-4xl font-extrabold">$49</span>
+                            <span class="currency-symbol">99</span>
+                            <span class="ml-2 text-xl font-medium self-end">/month</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">All Pro features</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Unlimited storage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Advanced security features</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">Custom AI model training</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">API access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-gray-700">24/7 priority support</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block w-full bg-purple-700 text-white text-center py-3 px-4 rounded-md hover:bg-purple-800 transition duration-300">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot Demo Section -->
+    <section id="chatbot" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Meet Our AI Chatbot
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Experience the power of our AI assistant that helps you get things done.
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg overflow-hidden animate-float">
+                        <div class="bg-indigo-600 px-4 py-3 flex items-center">
+                            <div class="flex space-x-1.5">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            <div class="ml-4 text-white font-medium">bazillu AI Chatbot</div>
+                        </div>
+                        <div class="p-6 h-80 overflow-y-auto flex flex-col space-y-4" id="chat-messages">
+                            <div class="flex items-end">
+                                <div class="flex flex-col space-y-2 text-sm max-w-xs mx-2 order-2 items-start">
+                                    <div class="chatbot-message px-4 py-2 rounded-lg rounded-bl-none bg-indigo-600 text-white">
+                                        Hello! I'm bazillu AI. How can I help you today?
+                                    </div>
+                                </div>
+                                <svg class="w-6 h-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 005 10a6 6 0 0012 0c0-.35-.035-.691-.1-1.02A5 5 0 0010 11z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div class="flex items-end justify-end">
+                                <div class="flex flex-col space-y-2 text-sm max-w-xs mx-2 order-1 items-end">
+                                    <div class="chatbot-message px-4 py-2 rounded-lg rounded-br-none bg-gray-200 text-gray-800">
+                                        Can you help me create a presentation?
+                                    </div>
+                                </div>
+                                <svg class="w-6 h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 005 10a6 6 0 0012 0c0-.35-.035-.691-.1-1.02A5 5 0 0010 11z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div class="flex items-end">
+                                <div class="flex flex-col space-y-2 text-sm max-w-xs mx-2 order-2 items-start">
+                                    <div class="chatbot-message px-4 py-2 rounded-lg rounded-bl-none bg-indigo-600 text-white">
+                                        Absolutely! I can help you create a stunning presentation with bazillu Slides. What's your presentation topic?
+                                    </div>
+                                </div>
+                                <svg class="w-6 h-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 005 10a6 6 0 0012 0c0-.35-.035-.691-.1-1.02A5 5 0 0010 11z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="border-t p-4">
+                            <div class="relative">
+                                <input type="text" id="chat-input" placeholder="Type your message..." class="w-full rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent px-5 py-3 pr-16">
+                                <button id="send-button" class="absolute right-2 top-2 p-1 rounded-full text-indigo-600 hover:bg-indigo-100">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 lg:pl-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Our AI Chatbot?</h3>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white animate-pulse-slow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Lightning Fast Responses</h4>
+                                <p class="mt-2 text-base text-gray-500">
+                                    Get instant answers to your questions and solutions to your problems.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white animate-bounce-slow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Smart Suggestions</h4>
+                                <p class="mt-2 text-base text-gray-500">
+                                    Receive intelligent recommendations based on your work and preferences.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white animate-spin-slow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Natural Conversations</h4>
+                                <p class="mt-2 text-base text-gray-500">
+                                    Interact with our AI in a natural, human-like conversation flow.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#" class="btn-primary inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Try bazillu AI Now
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Demo Section -->
+    <section id="request-demo" class="py-16 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Request a Demo
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-indigo-100 mx-auto">
+                    See how bazillu can transform your workflow and boost productivity.
+                </p>
+            </div>
+
+            <div class="max-w-lg mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <form id="demo-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <div class="mt-1">
+                                <input type="text" name="name" id="name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="John Doe">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <div class="mt-1">
+                                <input type="email" name="email" id="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700">Company Name</label>
+                            <div class="mt-1">
+                                <input type="text" name="company" id="company" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="Acme Inc.">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <div class="mt-1">
+                                <textarea id="message" name="message" rows="4" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="I'm interested in learning more about..."></textarea>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Submit Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Get in Touch
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Have questions? We're here to help.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 rounded-lg p-8 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="ml-3 text-base text-gray-700">
+                                <p>Email</p>
+                                <a href="mailto:bazilluincorporation@gmail.com" class="text-indigo-600 hover:text-indigo-500">bazilluincorporation@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div class="ml-3 text-base text-gray-700">
+                                <p>Phone</p>
+                                <a href="tel:+2348064372442" class="text-indigo-600 hover:text-indigo-500">+234 806 437 2442</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                </svg>
+                            </div>
+                            <div class="ml-3 text-base text-gray-700">
+                                <p>Social Media</p>
+                                <a href="https://twitter.com/bazillu" target="_blank" class="text-indigo-600 hover:text-indigo-500">@bazillu</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="ml-3 text-base text-gray-700">
+                                <p>Address</p>
+                                <span class="text-gray-700">123 Innovation Drive, Tech Valley, CA 94103</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium text-gray-900 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-indigo-600 transform transition-transform hover:scale-110">
+                                <span class="sr-only">Twitter</span>
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-indigo-600 transform transition-transform hover:scale-110">
+                                <span class="sr-only">LinkedIn</span>
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-indigo-600 transform transition-transform hover:scale-110">
+                                <span class="sr-only">Facebook</span>
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-indigo-600 transform transition-transform hover:scale-110">
+                                <span class="sr-only">Instagram</span>
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-indigo-600 transform transition-transform hover:scale-110">
+                                <span class="sr-only">YouTube</span>
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-8 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Send Us a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="contact-name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <div class="mt-1">
+                                <input type="text" name="contact-name" id="contact-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="Your name">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="contact-email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <div class="mt-1">
+                                <input type="email" name="contact-email" id="contact-email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="your.email@example.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="contact-message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <div class="mt-1">
+                                <textarea id="contact-message" name="contact-message" rows="4" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="Your message"></textarea>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center">
+                        <span class="text-indigo-400 font-bold text-2xl">bazillu</span>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-300">
+                        Revolutionizing productivity with AI-powered tools.
+                    </p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transform transition-transform hover:scale-110">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transform transition-transform hover:scale-110">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96422c8504cdf794',t:'MTc1MzM0NzA2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
