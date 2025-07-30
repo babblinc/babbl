@@ -179,9 +179,9 @@
                     </button>
                     
                     <!-- Search Modal -->
-                    <div id="searchModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20">
-                        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-4">
-                            <div class="p-6">
+                    <div id="searchModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-4 md:pt-20 p-4">
+                        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+                            <div class="p-4 md:p-6">
                                 <div class="flex justify-between items-center mb-4">
                                     <h3 class="text-lg font-semibold">Search Website</h3>
                                     <button id="searchClose" class="p-1 hover:bg-gray-100 rounded-md">
@@ -190,15 +190,15 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="flex gap-2 mb-4">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-4">
                                     <input type="text" id="searchInput" placeholder="Enter search term..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <button id="searchBtn" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Search</button>
+                                    <button id="searchBtn" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 whitespace-nowrap">Search</button>
                                 </div>
-                                <div id="searchResults" class="text-sm text-gray-600"></div>
-                                <div class="flex gap-2 mt-4">
-                                    <button id="prevResult" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:opacity-50" disabled>← Previous</button>
-                                    <button id="nextResult" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:opacity-50" disabled>Next →</button>
-                                    <button id="clearSearch" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Clear</button>
+                                <div id="searchResults" class="text-sm text-gray-600 mb-4"></div>
+                                <div class="flex flex-wrap gap-2">
+                                    <button id="prevResult" class="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:opacity-50 text-sm" disabled>← Prev</button>
+                                    <button id="nextResult" class="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:opacity-50 text-sm" disabled>Next →</button>
+                                    <button id="clearSearch" class="px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600 text-sm">Clear</button>
                                 </div>
                             </div>
                         </div>
@@ -209,12 +209,12 @@
                 <div class="flex items-center">
                     <div class="flex flex-col items-center mr-3">
                         <div class="flex gap-1 mb-1">
-                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-red-400 rounded-full shadow-sm"></div>
+                            <div class="w-3 h-3 bg-green-400 rounded-full shadow-sm"></div>
                         </div>
                         <div class="flex gap-1">
-                            <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
-                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-blue-500 rounded-full shadow-sm"></div>
+                            <div class="w-3 h-3 bg-yellow-400 rounded-full shadow-sm"></div>
                         </div>
                     </div>
                     <div class="text-2xl font-bold text-blue-600">Babbl</div>
@@ -238,10 +238,10 @@
                     
                     <!-- Signup Modal -->
                     <div id="signupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-                        <div class="bg-white rounded-lg shadow-xl w-full max-w-md max-h-96 overflow-y-auto">
-                            <div class="p-6">
+                        <div class="bg-white rounded-lg shadow-xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+                            <div class="p-4 md:p-6">
                                 <div class="flex justify-between items-center mb-4">
-                                    <h3 class="text-xl font-semibold">Sign Up for Babbl</h3>
+                                    <h3 class="text-xl font-semibold text-gray-900">Sign Up for Babbl</h3>
                                     <button id="signupClose" class="p-1 hover:bg-gray-100 rounded-md">
                                         <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -276,7 +276,7 @@
                                             <option value="Other">Other</option>
                                         </select>
                                     </div>
-                                    <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Sign Up</button>
+                                    <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-md hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-sm">Sign Up</button>
                                 </form>
                             </div>
                         </div>
@@ -287,41 +287,41 @@
     </header>
 
     <!-- Rotating Ads Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-16">
+    <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8 md:py-16">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="adSlider" class="text-center">
+            <div id="adSlider" class="text-center min-h-[400px] md:min-h-[300px] flex items-center">
                 <!-- Ad 1: Babbl Suite -->
-                <div class="ad-slide fade-in" data-ad="1">
-                    <div class="flex flex-col lg:flex-row items-center justify-between">
-                        <div class="lg:w-1/2 mb-8 lg:mb-0">
-                            <div class="w-32 h-32 mx-auto lg:mx-0 mb-6 bg-white/20 rounded-full flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="ad-slide fade-in w-full" data-ad="1">
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+                        <div class="lg:w-1/2 mb-4 lg:mb-0 flex-shrink-0">
+                            <div class="w-24 h-24 md:w-32 md:h-32 mx-auto lg:mx-0 mb-4 md:mb-6 bg-white/20 rounded-full flex items-center justify-center">
+                                <svg class="w-12 h-12 md:w-16 md:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                                 </svg>
                             </div>
                         </div>
                         <div class="lg:w-1/2 text-center lg:text-left">
-                            <h2 class="text-4xl font-bold mb-4">Babbl Suite: Built for the Future</h2>
-                            <p class="text-xl mb-6 text-blue-100">Working like the future is already here. Babbl Suite brings together your tools, your team & your intelligence – all in one seamless experience from cloud to secure productivity. It is your competitive edge.</p>
-                            <button onclick="window.open('https://suite.babblsoft.com', '_blank')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Explore Babbl Suite</button>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">Babbl Suite: Built for the Future</h2>
+                            <p class="text-base md:text-lg lg:text-xl mb-4 md:mb-6 text-blue-100 leading-relaxed">Working like the future is already here. Babbl Suite brings together your tools, your team & your intelligence – all in one seamless experience from cloud to secure productivity. It is your competitive edge.</p>
+                            <button onclick="window.open('https://suite.babblsoft.com', '_blank')" class="bg-white text-blue-600 px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-sm md:text-base">Explore Babbl Suite</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Ad 2: Spur AI -->
-                <div class="ad-slide hidden" data-ad="2">
-                    <div class="flex flex-col lg:flex-row items-center justify-between">
-                        <div class="lg:w-1/2 mb-8 lg:mb-0">
-                            <div class="w-32 h-32 mx-auto lg:mx-0 mb-6 bg-white/20 rounded-full flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="ad-slide hidden w-full" data-ad="2">
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+                        <div class="lg:w-1/2 mb-4 lg:mb-0 flex-shrink-0">
+                            <div class="w-24 h-24 md:w-32 md:h-32 mx-auto lg:mx-0 mb-4 md:mb-6 bg-white/20 rounded-full flex items-center justify-center">
+                                <svg class="w-12 h-12 md:w-16 md:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                                 </svg>
                             </div>
                         </div>
                         <div class="lg:w-1/2 text-center lg:text-left">
-                            <h2 class="text-4xl font-bold mb-4">Spur AI: Intelligence Than More</h2>
-                            <p class="text-xl mb-6 text-blue-100">"Not just smart." But motivated. Spur AI doesn't just analyse – it acts. It learns your patterns, adapts to your goals, and helps you make decisions before you even ask. This is super intelligence, built for creators, leaders and visionaries.</p>
-                            <button onclick="window.open('https://spurai.babblsoft.com', '_blank')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Try Spur AI Free</button>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">Spur AI: Intelligence Than More</h2>
+                            <p class="text-base md:text-lg lg:text-xl mb-4 md:mb-6 text-blue-100 leading-relaxed">"Not just smart." But motivated. Spur AI doesn't just analyse – it acts. It learns your patterns, adapts to your goals, and helps you make decisions before you even ask. This is super intelligence, built for creators, leaders and visionaries.</p>
+                            <button onclick="window.open('https://spurai.babblsoft.com', '_blank')" class="bg-white text-blue-600 px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-sm md:text-base">Try Spur AI Free</button>
                         </div>
                     </div>
                 </div>
@@ -470,24 +470,10 @@
                     </svg>
                 </a>
                 
-                <!-- Facebook -->
-                <a href="https://facebook.com/babblplatform" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                </a>
-                
                 <!-- Discord -->
                 <a href="https://discord.gg/babblplatform" target="_blank" class="text-gray-600 hover:text-indigo-600 transition-colors">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0190 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
-                    </svg>
-                </a>
-                
-                <!-- TikTok -->
-                <a href="https://tiktok.com/@babblplatform" target="_blank" class="text-gray-600 hover:text-black transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
                     </svg>
                 </a>
                 
@@ -809,5 +795,5 @@ Interested In: ${data.interest}`;
             if (e.target === signupModal) signupModal.classList.add('hidden');
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9676cc85e726bb6c',t:'MTc1Mzg5ODg4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9676e06a51ba036d',t:'MTc1Mzg5OTY5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
